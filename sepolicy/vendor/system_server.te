@@ -25,6 +25,8 @@ allow system_server default_android_service:service_manager { find };
 
 allow system_server zygote:process { getpgid };
 
+dontaudit system_server sysfs:file { read open getattr };
+
 get_prop(system_server, exported_camera_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
