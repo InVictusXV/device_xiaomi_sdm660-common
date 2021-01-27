@@ -1,8 +1,6 @@
 /*
- *
  *  Copyright (c) 2013, The Linux Foundation. All rights reserved.
- *  Not a Contribution, Apache license notifications and license are retained
- *  for attribution purposes only.
+ *  Not a Contribution.
  *
  * Copyright (C) 2012 The Android Open Source Project
  * Copyright (C) 2016 The CyanogenMod Project
@@ -50,6 +48,7 @@ static inline const char* BtmGetDefaultName()
 #undef PROPERTY_VALUE_MAX
 
 #define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
+
 // Disables read remote device feature
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    32
@@ -57,6 +56,4 @@ static inline const char* BtmGetDefaultName()
 #define GATT_MAX_PHY_CHANNEL  10
 
 #define AVDT_NUM_SEPS 35
-#pragma pop_macro("PROPERTY_VALUE_MAX")
-
 #endif
