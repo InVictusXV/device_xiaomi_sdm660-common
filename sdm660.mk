@@ -215,10 +215,8 @@ PRODUCT_PACKAGES += \
     libdisplayconfig.qti.vendor \
     libstagefright_enc_common \
     libtinyxml \
-    vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor
     vendor.display.config@1.9 \
-    vendor.display.config@1.9_vendor
+    vendor.display.config@1.9.vendor
 
 # Density
 TARGET_SCREEN_DENSITY := 400
