@@ -330,6 +330,36 @@ vendor/lib64/vendor.qti.gnss@4.0-service.so|3c75d133af5193436167380aa89abcf05d07
 vendor/lib64/vendor.qti.gnss@4.0.so|cc2504016d0ce0afbc58ac95207a4b913f2ccfe9
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so|19a1f7ffb8118c207aa8cb2318996605771c339a
 
+# GPS - from LA.UM.8.2.r1-07400-sdm660.0
+vendor/bin/loc_launcher|72130c59ca686ebfb588c4b724adb5572a5a33d2
+vendor/bin/lowi-server|9da7b8da6a9ab3c48a9d11d0b1f302938ea6b185
+vendor/bin/slim_daemon|a5ba577ac1cde4f3d3e3d1d4c4ad0b7e8908873f
+vendor/bin/xtra-daemon|f596e41b47179dbbb7d423c25b15afbb8a153541
+-vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml|9b2f6691d6c224bcb9ab9a0d57adfb9e52f1b53e
+vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so|7e89f3bc23cf3694d5cc214142018ab0c3558407
+vendor/lib64/libcacertclient.so|e04aa49d3b3b4534f5eb2b1ccea69ff8fee0182c
+vendor/lib64/libdataitems.so|780958151b4a6bf31b2848dfe37664889c82f214
+vendor/lib64/libgdtap.so|6a92805410e99b1341c8197c43c16d0d8caf3ec5
+vendor/lib64/libizat_client_api.so|2343abbe03743adb24a79762feb89a2174b9b838
+vendor/lib64/libizat_core.so|28ecc1f0bd593fcc578d9597e30b21d279ad6fce
+vendor/lib64/liblbs_core.so|93f79bb4daa1c9dba0e10fa5af6953eaa19aa043
+vendor/lib64/libloc_api_v02.so|9cfc7139f85f9e93f70f45c6806fd9b2494fce46
+vendor/lib64/liblocationservice.so|3b3d4a61efe9ea82d27a0747d5b42698194f450a
+vendor/lib64/liblocationservice_glue.so|6341ec7f5ed873c310e814c685d6bec74b7bce02
+vendor/lib64/liblowi_client.so|e32c1c0d6ca9e25b4ff8ad876021947acdc2b88a
+vendor/lib64/liblowi_wifihal.so|295f236ad9300f3f2768cb9ce7debce291cb2176
+vendor/lib64/libqdma_file_agent.so|80c6afee744cb147f30a2b971fff1638a7c0c4e2
+vendor/lib64/libslimclient.so|ec1c767dac9d1a55af442a3f2c73b3faf684bf01
+vendor/lib64/libxtadapter.so|d1df4fc590610dd455405c4e43a266e6dda4e2f2
+vendor/lib64/vendor.qti.gnss@1.0.so|cab0039ed66d87772a5ba6617c39c5ccd0e3f1b2
+vendor/lib64/vendor.qti.gnss@1.1.so|f42d12f0787564b0b80f505d36429004714ef893
+vendor/lib64/vendor.qti.gnss@1.2.so|28d3dadb2b02fd99829062caece8e56c113027d9
+vendor/lib64/vendor.qti.gnss@2.0.so|d567ea796a3f8758365ce5fd2a7294db1a7e1544
+vendor/lib64/vendor.qti.gnss@2.1.so|96c599aeef751258262a5480e69d78a3476062a8
+vendor/lib64/vendor.qti.gnss@3.0-service.so|e799172a7113a35b1f17a8c5999713286c104d11
+vendor/lib64/vendor.qti.gnss@3.0.so|07ae1f9907a85d9adfb99be04b8c4d1497dbece0
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so|b6ff1fa5d685ff3572993cbe8325c36654eea4d8
+
 # GPU firmware - from jasmine-user-10-QKQ1.190910.002-V11.0.19.0.QDIMIXM
 vendor/firmware/a512_zap.b00|85a7fc0008f9a2071d8b3d0cc212b19141633267
 vendor/firmware/a512_zap.b01|e0b7818182fac232182bfb70a4f43ec3e36779b9
