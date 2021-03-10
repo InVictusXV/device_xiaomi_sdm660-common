@@ -32,6 +32,7 @@ import /vendor/etc/init/hw/init.qcom.factory.rc
 import /vendor/etc/init/hw/init.qcom.test.rc
 import /vendor/etc/init/hw/init.device.rc
 import /vendor/etc/init/hw/init.xiaomi_parts.rc
+import /vendor/etc/init/hw/init.safailnet.rc
 import /vendor/etc/init/hw/init.gpuboost.rc
 import /vendor/etc/init/hw/init.cpuboost.rc
 import /vendor/etc/init/hw/init.parallax.rc
@@ -603,6 +604,12 @@ on property:vendor.opengles.version=*
 #Set gpu available frequencies property
 on property:vendor.gpu.available_frequencies=*
     setprop ro.vendor.gpu.available_frequencies ${vendor.gpu.available_frequencies}
+    
+service vendor.power-hal /vendor/bin/hw/android.hardware.power-service
+    override
+    class hal
+    user system
+    group system input
 
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
