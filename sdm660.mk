@@ -213,7 +213,6 @@ PRODUCT_PACKAGES += \
     memtrack.sdm660 \
     libdisplayconfig \
     libdisplayconfig.qti.vendor \
-    libqdMetaData \
     libqdMetaData.system \
     libtinyxml \
     vendor.display.config@2.0 \
