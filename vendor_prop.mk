@@ -22,15 +22,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.sys.offload.pstimeout.secs=3 \
     persist.audio.in_mmap_delay_micros=100 \
     persist.audio.out_mmap_delay_micros=150 \
-    persist.vendor.audio.ras.enabled=true \
     persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=true \
     persist.vendor.audio.hifi.int_codec=true \
-    persist.audio.fluence.voicecomm=true \
-    persist.vendor.audio.avs.afe_api_version=2 \
-    ro.vendor.audio.sos=true \
-    persist.vendor.audio.spv3.enable=true \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     persist.vendor.audio.ras.enabled=false \
     ro.af.client_heap_size_kbyte=7168 \
@@ -62,8 +57,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Audio Feature
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.audio.adm.buffering.ms=3 \
-    vendor.audio.feature.a2dp_offload.enable=false \
     vendor.audio.feature.a2dp_offload.enable=true \
     vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.anc_headset.enable=true \
@@ -85,11 +78,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.external_speaker_tfa.enable=false \
     vendor.audio.feature.fluence.enable=true \
     vendor.audio.feature.fm.enable=true \
-    vendor.audio.feature.hdmi_edid.enable=true \
-    vendor.audio.feature.hdmi_passthrough.enable=true \
-    vendor.audio.feature.hfp.enable=true \
-    vendor.audio.feature.wsa.enable=true \
-    vendor.audio.feature.snd_mon.enable=true \
+    vendor.audio.feature.hdmi_edid.enable=false \
+    vendor.audio.feature.hdmi_passthrough.enable=false \
+    vendor.audio.feature.hfp.enable=false \
     vendor.audio.feature.hifi_audio.enable=true \
     vendor.audio.feature.hwdep_cal.enable=false \
     vendor.audio.feature.incall_music.enable=false \
@@ -116,15 +107,21 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.feature.spkr_prot.enable=true
 endif
 
-# Bluetooth & FM
+ifneq ($(filter lavender,$(TARGET_DEVICE)),)
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.audio.adm.buffering.ms=12
+else
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.audio.adm.buffering.ms=6
+endif
+
+
+# Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.bluetooth.bluetooth_audio_hal.disabled=false \
     persist.vendor.bt.aac_frm_ctl.enabled=true \
     ro.vendor.bluetooth.wipower=false \
-    vendor.qcom.bluetooth.soc=cherokee \
-    bt.max.hfpclient.connections=1 \
-    ro.vendor.fm.use_audio_session=true \
-    vendor.hw.fm.init=0
+    vendor.qcom.bluetooth.soc=cherokee
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.bluetooth.a2dp_offload.disabled=false \
