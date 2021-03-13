@@ -139,6 +139,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
     debug.sf.hw=1 \
+    debug.sf.enable_hwc_vds=1 \
     debug.sf.early_app_phase_offset_ns=11600000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
