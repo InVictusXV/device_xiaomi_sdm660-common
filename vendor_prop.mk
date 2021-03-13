@@ -1,9 +1,3 @@
-# Apex
-ifeq ($(ENABLE_APEX), true)
-PRODUCT_PRODUCT_PROPERTIES += \
-     ro.apex.updatable=true
-endif
-
 # ART
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.boot-dex2oat-threads=8 \
@@ -16,7 +10,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
-    audio.offload.min.duration.secs=30 \
     audio.offload.video=true \
     audio.sys.noisy.broadcast.delay=600 \
     audio.sys.offload.pstimeout.secs=3 \
@@ -34,8 +27,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
     persist.vendor.audio.ras.enabled=false \
     ro.af.client_heap_size_kbyte=7168 \
-    ro.config.vc_call_vol_steps=7 \
-    ro.config.media_vol_steps=25 \
     ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.dolby.ds2.enabled=false \
@@ -132,29 +123,13 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.privapp.list=org.codeaurora.snapcam \
     persist.vendor.camera.dual.isp.sync=0 \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.eis.enable=1 \
     persist.vendor.camera.exif.make=Xiaomi \
     vendor.camera.aux.packageblacklist=com.discord \
     camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam \
-    vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam \
-    persist.sys.camera.camera2=true \
-    persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
-    persist.vendor.camera.preview.ubwc=0 \
-    persist.vendor.camera.isp.clock.optmz=0 \
-    persist.vendor.camera.isp.turbo=1 \
-    persist.vendor.camera.imglib.usefdlite=1 \
-    persist.vendor.camera.expose.aux=1 \
-    persist.vendor.camera.awb.sync=2 \
-    persist.vendor.camera.manufacturer=Xiaomi \
-    persist.vendor.camera.model=Redmi Note 7
-
-# Charger
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.charger.disable_init_blank=true \
-    ro.charger.enable_suspend=true
+    vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam
 
 # Codec2 switch
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -163,14 +138,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.latch_unsignaled=1 \
-    debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
-    debug.sf.disable_backpressure=1 \
     debug.sf.early_app_phase_offset_ns=11600000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_phase_offset_ns=11600000 \
-    debug.cpurend.vsync=false \
+    debug.cpurend.vsync=true \
     debug.hwui.use_buffer_age=false \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
@@ -178,7 +151,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.opengles.version=196610 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
-    persist.hwc.enable_vds=1 \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=403 \
     ro.vendor.display.cabl=2 \
@@ -211,28 +183,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.android.camera,com.android.camera2,com.instagram.android \
     vendor.camera.hal1.packagelist= com.android.camera,com.android.camera2,com.instagram.android
 
-# iwlan vowifi corresponding
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.data.iwlan.enable=true
-
-# IMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.vendor.ims.disableUserAgent=0
-
-# LMKD
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lmk.low=1001 \
-    ro.lmk.medium=800 \
-    ro.lmk.critical=0 \
-    ro.lmk.critical_upgrade=false \
-    ro.lmk.upgrade_pressure=100 \
-    ro.lmk.downgrade_pressure=100 \
-    ro.lmk.kill_heaviest_task=true\
-    ro.lmk.kill_timeout_ms=100 \
-    ro.lmk.use_minfree_levels=true
-
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.omx_default_rank.sw-audio=1 \
@@ -250,10 +200,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.mm.enable.qcom_parser=13631487 \
     vendor.video.disable.ubwc=1 \
     ro.media.recorder-max-base-layer-fps=60
-
-# Memory optimizations
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.sys.fw.bservice_enable=true
     
 # MISC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -268,31 +214,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.netflix.bsp_rev=Q660-13149-1
 
-# OEM Unlock reporting
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.oem_unlock_supported=1
-
 # QCOM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1 \
     persist.vendor.qcomsysd.enabled=1 \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    persist.vendor.dpm.feature=1
-
-# QTI
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.vendor.qti.va_aosp.support=1
-
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.qti.va_odm.support=1
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.data.mode=concurrent \
     persist.data.df.dev_name=rmnet_usb0 \
     persist.debug.coresight.config=stm-events \
-    persist.timed.enable=true \
-    persist.vendor.data.iwlan.enable=true \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
@@ -301,18 +231,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.data_con_rprt=1 \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.procedure_bytes=SKIP \
-    persist.backup.ntpServer=0.pool.ntp.org \
     persist.radio.multisim.config=dsds \
     ro.telephony.iwlan_operation_mode=legacy \
     ro.vendor.use_data_netmgrd=true \
     ro.telephony.default_network=22,22 \
     vendor.rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     persist.vendor.radio.add_power_save=1
-
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    DEVICE_PROVISIONED=1 \
-    ril.subscription.types=NV,RUIM \
-    telephony.lteOnCdmaDevice=1
 
 # Rendering
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -337,52 +261,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.sensors.dev_ori=false \
     ro.vendor.sensors.mot_detect=true \
     ro.vendor.sensors.pmd=true \
-    ro.vendor.sensors.sta_detect=true \
-    ro.vendor.sensors.mot_detect=true
+    ro.vendor.sensors.sta_detect=true
 
 # SurfaceFlinger
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.disable_backpressure=1 \
-    debug.sf.enable_gl_backpressure=1 \
-    debug.sdm.support_writeback=0 \
-    debug.sf.latch_unsignaled=1
-
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
-    ro.surface_flinger.max_virtual_display_dimension=4096
+    debug.sdm.support_writeback=0
 
 # System restart
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.ssr.restart_level=ALL_ENABLE \
     ro.build.shutdown_timeout=2
 
-# Thermal configs path
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    sys.thermal.data.path=/data/vendor/thermal/
-
-# WFD
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.debug.wfd.enable=1 \
-    persist.sys.wfd.virtual=0
-
-# ZRAM
+# USB
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.zram.mark_idle_delay_mins=60 \
-    ro.zram.first_wb_delay_mins=180 \
-    ro.zram.periodic_wb_delay_hours=24
+    vendor.usb.diag.func.name=diag \
+    vendor.usb.use_ffs_mtp=0
 
-# Gboard
+# WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.clientidbase.ms=android-xiaomi-rev2 \
-    ro.com.google.ime.kb_pad_port_b=1 \
-    ro.com.google.ime.corner_key_r=35 \
-    ro.com.google.ime.kb_pad_port_l=7 \
-    ro.com.google.ime.kb_pad_port_r=7 \
-    ro.com.google.ime.kb_pad_land_l=14 \
-    ro.com.google.ime.kb_pad_land_r=14 \
-    ro.com.google.ime.kb_pad_port_b=1 \
-    ro.opa.eligible_device=true \
-    ro.com.google.ime.theme_id=5 \
-    ro.com.google.ime.bs_theme=true \
-    ro.com.google.ime.system_lm_dir=/product/usr/share/ime/google/d3_lms
+    wifi.aware.interface=wifi-aware0
