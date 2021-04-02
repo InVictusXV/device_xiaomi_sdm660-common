@@ -152,11 +152,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
-    debug.sf.early_app_phase_offset_ns=1500000 \
-    debug.sf.early_gl_phase_offset_ns=3000000 \
+    debug.sf.early_app_phase_offset_ns=11600000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000 \
-    debug.sf.early_phase_offset_ns=1500000 \
-    debug.cpurend.vsync=false \
+    debug.sf.early_gl_phase_offset_ns=3000000 \
+    debug.sf.early_phase_offset_ns=11600000 \
+    debug.cpurend.vsync=true \
     debug.hwui.use_buffer_age=false \
     vendor.display.disable_skip_validate=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
